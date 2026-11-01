@@ -2,6 +2,7 @@
  * unit. Use one stricter than the zone chunk header, as CMakeLists.txt does
  * on sparc (MSGPACK_ZONE_ALIGN=8 with a 4-byte header), so that an object
  * served from a newly expanded chunk needs padding. */
+#undef MSGPACK_ZONE_ALIGN
 #define MSGPACK_ZONE_ALIGN (2 * sizeof(void*))
 
 #include <msgpack/zone.h>
